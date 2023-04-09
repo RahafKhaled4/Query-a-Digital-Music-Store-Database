@@ -19,5 +19,27 @@ SELECT art.name,COUNT(al.ArtistId) "Albums"
  JOIN Album al
  ON art.ArtistId = al.ArtistId
  GROUP BY art.name ORDER BY 2 DESC LIMIT 10;
+____________________________________________________
+*/Secend Query */
+SELECT Med.name,Count(Tra.UnitPrice) "Count UnitPrice"
+ FROM  MediaType Med
+ JOIN Track Tra
+ ON Med.MediaTypeId = Tra.MediaTypeId
+    GROUP BY 1
+    ORDER BY 2 DESC
+_________________________________________________________
+*/Thired Query */
+SELECT Customer.FirstName,Customer.LastName,Max(Invoice .Total) "Max Total Invoice"
+ FROM  Customer 
+ JOIN Invoice 
+ ON Customer .CustomerId = Invoice .CustomerId
+ GROUP By Customer.CustomerId ORDER BY "Max Total Invoice" LIMIT 4;
+_____________________________________________________________________
+*/Four Query */
+SELECT Customer.FirstName,Customer.LastName,min(Invoice .Total) "Min Total Invoice"
+ FROM  Customer 
+ JOIN Invoice 
+ ON Customer.CustomerId = Invoice .CustomerId
+ GROUP By Customer.CustomerId ORDER BY "Min Total Invoice"  LIMIT 4;
 
 
